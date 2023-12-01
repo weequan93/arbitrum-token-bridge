@@ -94,6 +94,28 @@ export const xaiTestnet: Chain = {
   }
 }
 
+export const OwnTestnet: Chain = {
+  id: ChainId.OwnTestnet,
+  name: 'Own Testnet',
+  network: 'own-testnet',
+  nativeCurrency: ether,
+  rpcUrls: {
+    default: {
+      http: [rpcURLs[ChainId.OwnTestnet]!]
+    },
+    public: {
+      http: [rpcURLs[ChainId.OwnTestnet]!]
+    }
+  },
+  blockExplorers: {
+    default: {
+      name: 'Blockscout',
+      url: 'http://47.245.86.208:3050'
+    }
+  }
+}
+
+
 export const stylusTestnet: Chain = {
   id: ChainId.StylusTestnet,
   name: 'Stylus Testnet',

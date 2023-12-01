@@ -172,7 +172,8 @@ function NetworkContainer({
       isArbitrumNova,
       isOrbitChain,
       isXaiTestnet,
-      isStylusTestnet
+      isStylusTestnet,
+      isOwnTestnet,
     } = isNetwork(network.id)
 
     if (isXaiTestnet) {
@@ -186,6 +187,13 @@ function NetworkContainer({
       return {
         backgroundImage: `url('/images/StylusLogo.svg')`,
         backgroundClassName: 'bg-stylus-dark'
+      }
+    }
+
+    if (isOwnTestnet) {
+      return {
+        backgroundImage: `url('/images/OrbitLogoWhite.svg')`,
+        backgroundClassName: 'bg-orbit-dark'
       }
     }
 

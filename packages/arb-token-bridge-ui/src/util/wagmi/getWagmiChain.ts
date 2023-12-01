@@ -9,7 +9,8 @@ import {
   xaiTestnet,
   stylusTestnet,
   localL1Network,
-  localL2Network
+  localL2Network,
+  OwnTestnet
 } from './wagmiAdditionalNetworks'
 import { ChainId } from '../networks'
 import { getCustomChainFromLocalStorageById } from '../networks'
@@ -56,6 +57,8 @@ export function getWagmiChain(chainId: number): Chain {
 
     case ChainId.ArbitrumLocal:
       return localL2Network
+    case ChainId.OwnTestnet:
+      return OwnTestnet
 
     default:
       throw new Error(`[getWagmiChain] Unexpected chain id: ${chainId}`)

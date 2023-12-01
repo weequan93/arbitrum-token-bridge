@@ -10,7 +10,7 @@ export function useStyles() {
   } = useNetworksAndSigners()
 
   const depositButtonColorClassName = useMemo(() => {
-    const { isArbitrumNova, isXaiTestnet, isStylusTestnet, isOrbitChain } =
+    const { isArbitrumNova, isXaiTestnet, isStylusTestnet, isOrbitChain, isOwnTestnet } =
       isNetwork(l2Network.id)
 
     if (isXaiTestnet) {
@@ -18,6 +18,10 @@ export function useStyles() {
     }
 
     if (isStylusTestnet) {
+      return 'bg-stylus-dark'
+    }
+
+    if (isOwnTestnet) {
       return 'bg-stylus-dark'
     }
 

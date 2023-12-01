@@ -28,7 +28,8 @@ export function NetworkListbox({
       isArbitrumNova,
       isOrbitChain,
       isXaiTestnet,
-      isStylusTestnet
+      isStylusTestnet,
+      isOwnTestnet,
     } = isNetwork(value.id)
 
     if (isXaiTestnet) {
@@ -36,6 +37,11 @@ export function NetworkListbox({
     }
 
     if (isStylusTestnet) {
+      return 'bg-stylus-primary'
+    }
+
+
+    if (isOwnTestnet) {
       return 'bg-stylus-primary'
     }
 
