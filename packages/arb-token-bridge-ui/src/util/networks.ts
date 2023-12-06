@@ -189,7 +189,7 @@ export const rpcURLs: { [chainId: number]: string } = {
   [ChainId.XaiTestnet]: 'https://testnet.xai-chain.net/rpc',
   [ChainId.StylusTestnet]: 'https://stylus-testnet.arbitrum.io/rpc',
 
-  [ChainId.OwnTestnet]: 'http://47.245.86.208:3051'
+  [ChainId.OwnTestnet]: 'http://47.236.78.207:3051'
 }
 
 export const explorerUrls: { [chainId: number]: string } = {
@@ -208,7 +208,7 @@ export const explorerUrls: { [chainId: number]: string } = {
   [ChainId.XaiTestnet]: 'https://testnet-explorer.xai-chain.net',
   [ChainId.StylusTestnet]: 'https://stylus-testnet-explorer.arbitrum.io',
 
-  [ChainId.OwnTestnet]: 'http://47.245.86.208:3050'
+  [ChainId.OwnTestnet]: 'http://47.236.78.207:3050'
 }
 
 export const getExplorerUrl = (chainId: ChainId) => {
@@ -369,7 +369,7 @@ export const OwnTestnet:Chain = {
     rollup: '0x15EC998b8A51143c52f645baCEA922CE18d43Cc9',
     sequencerInbox: '0x77327348c06D3e1C42f4a9e59a78160C10Eb0EcF'
   },
-  explorerUrl: 'http://47.245.86.208:3050',
+  explorerUrl: 'http://47.236.78.207:3050',
   isArbitrum: true,
   isCustom: true,
   name: 'My Arbitrum L3 Chain',

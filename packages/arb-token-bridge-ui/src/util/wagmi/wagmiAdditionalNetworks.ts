@@ -110,7 +110,7 @@ export const OwnTestnet: Chain = {
   blockExplorers: {
     default: {
       name: 'Blockscout',
-      url: 'http://47.245.86.208:3050'
+      url: 'http://47.236.78.207:3050'
     }
   }
 }
