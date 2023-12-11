@@ -115,6 +115,28 @@ export const OwnTestnet: Chain = {
   }
 }
 
+export const DeriwTestnet: Chain = {
+  id: ChainId.DeriwTestnet,
+  name: 'Deriw Testnet',
+  network: 'deriw-testnet',
+  nativeCurrency: ether,
+  rpcUrls: {
+    default: {
+      http: [rpcURLs[ChainId.DeriwTestnet]!]
+    },
+    public: {
+      http: [rpcURLs[ChainId.DeriwTestnet]!]
+    }
+  },
+  blockExplorers: {
+    default: {
+      name: 'Blockscout',
+      url: 'http://47.236.78.207:3050'
+    }
+  }
+}
+
+
 
 export const stylusTestnet: Chain = {
   id: ChainId.StylusTestnet,

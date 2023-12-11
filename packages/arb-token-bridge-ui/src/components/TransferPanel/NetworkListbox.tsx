@@ -30,6 +30,7 @@ export function NetworkListbox({
       isXaiTestnet,
       isStylusTestnet,
       isOwnTestnet,
+      isDeriwTestnet,
     } = isNetwork(value.id)
 
     if (isXaiTestnet) {
@@ -42,6 +43,10 @@ export function NetworkListbox({
 
 
     if (isOwnTestnet) {
+      return 'bg-stylus-primary'
+    }
+    
+    if (isDeriwTestnet) {
       return 'bg-stylus-primary'
     }
 

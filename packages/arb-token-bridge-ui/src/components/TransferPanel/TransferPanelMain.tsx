@@ -174,6 +174,7 @@ function NetworkContainer({
       isXaiTestnet,
       isStylusTestnet,
       isOwnTestnet,
+      isDeriwTestnet,
     } = isNetwork(network.id)
 
     if (isXaiTestnet) {
@@ -191,6 +192,13 @@ function NetworkContainer({
     }
 
     if (isOwnTestnet) {
+      return {
+        backgroundImage: `url('/images/OrbitLogoWhite.svg')`,
+        backgroundClassName: 'bg-orbit-dark'
+      }
+    }
+
+    if (isDeriwTestnet) {
       return {
         backgroundImage: `url('/images/OrbitLogoWhite.svg')`,
         backgroundClassName: 'bg-orbit-dark'
