@@ -160,7 +160,7 @@ export enum ChainId {
   XaiTestnet = 47279324479,
   StylusTestnet = 23011913,
   OwnTestnet = 65779670738,
-  DeriwTestnet = 54599313870
+  DeriwTestnet = 13064770854
 }
 
 export const supportedCustomOrbitParentChains = [
@@ -192,7 +192,8 @@ export const rpcURLs: { [chainId: number]: string } = {
   [ChainId.XaiTestnet]: 'https://testnet.xai-chain.net/rpc',
   [ChainId.StylusTestnet]: 'https://stylus-testnet.arbitrum.io/rpc',
 
-  [ChainId.OwnTestnet]: 'http://47.236.78.207:3051'
+  [ChainId.OwnTestnet]: 'http://47.236.78.207:3051',
+  [ChainId.DeriwTestnet]: 'http://47.236.78.207:3051'
 }
 
 export const explorerUrls: { [chainId: number]: string } = {
@@ -211,7 +212,8 @@ export const explorerUrls: { [chainId: number]: string } = {
   [ChainId.XaiTestnet]: 'https://testnet-explorer.xai-chain.net',
   [ChainId.StylusTestnet]: 'https://stylus-testnet-explorer.arbitrum.io',
 
-  [ChainId.OwnTestnet]: 'http://47.236.78.207:3050'
+  [ChainId.OwnTestnet]: 'http://47.236.78.207:3050',
+  [ChainId.DeriwTestnet]: 'http://47.236.78.207:3051'
 }
 
 export const getExplorerUrl = (chainId: ChainId) => {
@@ -268,11 +270,12 @@ export const chainIdToDefaultL2ChainId: { [chainId: number]: ChainId[] } = {
   [ChainId.ArbitrumNova]: [ChainId.ArbitrumNova],
   // L2 Testnets
   [ChainId.ArbitrumGoerli]: [ChainId.ArbitrumGoerli, ChainId.XaiTestnet, ChainId.OwnTestnet],
-  [ChainId.ArbitrumSepolia]: [ChainId.ArbitrumSepolia, ChainId.StylusTestnet],
+  [ChainId.ArbitrumSepolia]: [ChainId.ArbitrumSepolia, ChainId.StylusTestnet, ChainId.DeriwTestnet],
   // Orbit Testnets
   [ChainId.XaiTestnet]: [ChainId.XaiTestnet],
   [ChainId.StylusTestnet]: [ChainId.StylusTestnet],
-  [ChainId.OwnTestnet]: [ChainId.OwnTestnet]
+  [ChainId.OwnTestnet]: [ChainId.OwnTestnet],
+  [ChainId.DeriwTestnet]: [ChainId.DeriwTestnet]
 }
 
 const defaultL1Network: L1Network = {
@@ -400,14 +403,14 @@ export const OwnTestnet:Chain = {
 }
 
 export const DeriwTestnet: Chain = {
-  chainID: 54599313870,
+  chainID: 13064770854,
   confirmPeriodBlocks: 20,
   ethBridge: {
-    bridge: '0x309B1A54B2eD4DFcb60D9926C91da9248A66A19d',
-    inbox: '0xfA6cd7E7bAF4E3AaE0AB58A1F61b8803Aedf152a',
-    outbox: '0xd99dBD47E5d252bD425013B396E9bC7E3e158667',
-    rollup: '0x7f9fC8240590b740c2Da8A2F5dc95c37b0412db0',
-    sequencerInbox: '0x7a2dDf6bebcB573D8308313a1c590e1D140F7A55'
+    bridge: '0x032255b7C3cBF028E62c9aF2c72A7f6affa9f767',
+    inbox: '0x3e7254AA86Ce0513E524499D5634d40Ea51a18d7',
+    outbox: '0xc5C79A6f68345cDbD5015Ae19909CF79B5383234',
+    rollup: '0x1ca61E47763Fb633f5A95f59949604B9113E1a1c',
+    sequencerInbox: '0x5B0c7749B1458Df81D454165875BCC281F7Ea143'
   },
   explorerUrl: 'http://47.236.78.207:3050',
   isArbitrum: true,
@@ -606,7 +609,7 @@ export function getNetworkName(chainId: number) {
     case ChainId.OwnTestnet:
       return 'Own Testnet'
     case ChainId.DeriwTestnet:
-      return 'Own Testnet'
+      return 'Deriw Testnet'
 
     case ChainId.StylusTestnet:
       return 'Stylus Testnet'

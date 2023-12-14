@@ -355,6 +355,7 @@ export function NetworksAndSignersProvider(
         if (providerChainId !== _selectedL2ChainId && !isConnectedToArbitrum) {
           // Make sure the Chain provider chainid match the selected chainid
           // We continue the check if connected to Arbitrum, because Arbitrum can be either ParentChain or Chain.
+          console.error("error", error)
           setResult({
             status: UseNetworksAndSignersStatus.NOT_SUPPORTED,
             chainId: providerChainId
@@ -368,19 +369,21 @@ export function NetworksAndSignersProvider(
             `Failed to connect to ${getNetworkName(_selectedL2ChainId)}.`
           )
         }
-
+        console.log("provider", provider)
         getChain(provider as Web3Provider)
           .then(async chain => {
             const parentChainId = chain.partnerChainID
+            console.log("p0")
             const parentProvider = new StaticJsonRpcProvider(
               rpcURLs[parentChainId]
             )
+            console.log("p1")
             const parentChain = await getParentChain(parentProvider)
-
+            console.log("p2")
             const chainProvider = new StaticJsonRpcProvider(
               rpcURLs[chain.chainID]
             )
-
+            console.log("p3")
             if (thisInvocation !== invocationCounter.current) {
               // don't apply if the iteration is not the latest
               return
@@ -396,18 +399,19 @@ export function NetworksAndSignersProvider(
                 provider: chainProvider
               }
             })
-
+            console.log("p4")
             // set the child(l2/l3) chain id in query params so that it remembers it when switching back from parent
             // else, the child chain will reset to default when switching back from parent
             setQueryParams({
               l2ChainId: chain.chainID
             })
           })
-          .catch(() => {
+          .catch((e) => {
             if (thisInvocation !== invocationCounter.current) {
               // don't apply if the iteration is not the latest
               return
             }
+            console.error("UseNetworksAndSignersStatus.NOT_SUPPORTED 2",e)
             setResult({
               status: UseNetworksAndSignersStatus.NOT_SUPPORTED,
               chainId: providerChainId
