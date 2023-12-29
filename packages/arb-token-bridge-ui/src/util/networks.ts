@@ -160,7 +160,7 @@ export enum ChainId {
   XaiTestnet = 47279324479,
   StylusTestnet = 23011913,
   OwnTestnet = 65779670738,
-  DeriwTestnet = 13064770854
+  DeriwTestnet = 31875678427
 }
 
 export const supportedCustomOrbitParentChains = [
@@ -403,14 +403,14 @@ export const OwnTestnet:Chain = {
 }
 
 export const DeriwTestnet: Chain = {
-  chainID: 13064770854,
+  chainID: 31875678427,
   confirmPeriodBlocks: 20,
   ethBridge: {
-    bridge: '0x032255b7C3cBF028E62c9aF2c72A7f6affa9f767',
-    inbox: '0x3e7254AA86Ce0513E524499D5634d40Ea51a18d7',
-    outbox: '0xc5C79A6f68345cDbD5015Ae19909CF79B5383234',
-    rollup: '0x1ca61E47763Fb633f5A95f59949604B9113E1a1c',
-    sequencerInbox: '0x5B0c7749B1458Df81D454165875BCC281F7Ea143'
+    bridge: '0x4f6774c4eFb3f59705041b6Dd71254767654cEe1',
+    inbox: '0x917CcDFAe552D02624aF8e7cD868c59020911665',
+    outbox: '0x4EF6d20D78b8f07e193430743990381154111342',
+    rollup: '0x507199951471651e49C19B02F9Df6b7E81B3F11a',
+    sequencerInbox: '0x001A05989Ec41457100f1D6b0BA3087924572b3B'
   },
   explorerUrl: 'http://47.236.78.207:3050',
   isArbitrum: true,
