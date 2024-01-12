@@ -193,7 +193,7 @@ export const rpcURLs: { [chainId: number]: string } = {
   [ChainId.StylusTestnet]: 'https://stylus-testnet.arbitrum.io/rpc',
 
   [ChainId.OwnTestnet]: 'http://47.236.78.207:3051',
-  [ChainId.DeriwTestnet]: 'http://47.236.78.207:3051'
+  [ChainId.DeriwTestnet]: 'http://rpc.test.deriw.com/'
 }
 
 export const explorerUrls: { [chainId: number]: string } = {
@@ -213,7 +213,7 @@ export const explorerUrls: { [chainId: number]: string } = {
   [ChainId.StylusTestnet]: 'https://stylus-testnet-explorer.arbitrum.io',
 
   [ChainId.OwnTestnet]: 'http://47.236.78.207:3050',
-  [ChainId.DeriwTestnet]: 'http://47.236.78.207:3051'
+  [ChainId.DeriwTestnet]: 'http://rpc.test.deriw.com/'
 }
 
 export const getExplorerUrl = (chainId: ChainId) => {
