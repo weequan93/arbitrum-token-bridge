@@ -47,7 +47,7 @@ export function NetworkListbox({
     }
     
     if (isDeriwTestnet) {
-      return 'bg-stylus-primary'
+      return 'bg-deriw-primary'
     }
 
     if (isOrbitChain) {

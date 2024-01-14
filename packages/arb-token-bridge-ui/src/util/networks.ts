@@ -193,7 +193,7 @@ export const rpcURLs: { [chainId: number]: string } = {
   [ChainId.StylusTestnet]: 'https://stylus-testnet.arbitrum.io/rpc',
 
   [ChainId.OwnTestnet]: 'http://47.236.78.207:3051',
-  [ChainId.DeriwTestnet]: 'http://rpc.test.deriw.com'
+  [ChainId.DeriwTestnet]: 'https://rpc.test.deriw.com'
 }
 
 export const explorerUrls: { [chainId: number]: string } = {
@@ -213,7 +213,7 @@ export const explorerUrls: { [chainId: number]: string } = {
   [ChainId.StylusTestnet]: 'https://stylus-testnet-explorer.arbitrum.io',
 
   [ChainId.OwnTestnet]: 'http://47.236.78.207:3050',
-  [ChainId.DeriwTestnet]: 'http://rpc.test.deriw.com'
+  [ChainId.DeriwTestnet]: 'http://explorer.test.deriw.com'
 }
 
 export const getExplorerUrl = (chainId: ChainId) => {
@@ -412,27 +412,28 @@ export const DeriwTestnet: Chain = {
     rollup: '0xeDdFF752C441dF127f112ab10cded499df14779f',
     sequencerInbox: '0x84879a0d36bEcfc943B6Ec6Aeaa53bc9e261349d'
   },
-  explorerUrl: 'http://47.236.78.207:3050',
+  explorerUrl: 'http://explorer.test.deriw.com',
   isArbitrum: true,
   isCustom: true,
   name: 'Deriw Testnet',
   partnerChainID: 421614,
   retryableLifetimeSeconds: 604800,
   tokenBridge: {
-    l1CustomGateway: '0xba2F7B6eAe1F9d174199C5E4867b563E0eaC40F3',
-    l1ERC20Gateway: '0x902b3E5f8F19571859F4AB1003B960a5dF693aFF',
-    l1GatewayRouter: '0xcE18836b233C83325Cc8848CA4487e94C6288264',
-    l1MultiCall: '0x21779e0950A87DDD57E341d54fc12Ab10F6eE167',
-    l1ProxyAdmin: '0xDBFC2FfB44A5D841aB42b0882711ed6e5A9244b0',
-    l1Weth: '0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9',
-    l1WethGateway: '0xA8aD8d7e13cbf556eE75CB0324c13535d8100e1E',
-    l2CustomGateway: '0x8Ca1e1AC0f260BC4dA7Dd60aCA6CA66208E642C5',
-    l2ERC20Gateway: '0x6e244cD02BBB8a6dbd7F626f05B2ef82151Ab502',
-    l2GatewayRouter: '0x9fDD1C4E4AA24EEc1d913FABea925594a20d43C7',
-    l2Multicall: '0xA115146782b7143fAdB3065D86eACB54c169d092',
-    l2ProxyAdmin: '0x715D99480b77A8d9D603638e593a539E21345FdF',
-    l2Weth: '0x980B62Da83eFf3D4576C647993b0c1D7faf17c73',
-    l2WethGateway: '0xCFB1f08A4852699a979909e22c30263ca249556D'
+    l1CustomGateway: '0xd3dEff8d1533569842f4987113A0E64791e7173c',
+    l1ERC20Gateway: '0xA024b4ea8fB2BAD94c845436e8C01e405f429a7C',
+    l1GatewayRouter: '0xA8bAef7CCDD705620d9B243163F84B3a2a424a13',
+    l1MultiCall: '0xce1CAd780c529e66e3aa6D952a1ED9A6447791c1',
+    l1ProxyAdmin: '0x6963623Dcce3d042328274389047464a17c46596',
+    l1Weth: '0x980B62Da83eFf3D4576C647993b0c1D7faf17c73',
+    l1WethGateway: '0x056C2214b956b737F5654399f16A122cE66ac9C9',
+
+    l2CustomGateway: '0x9Bf0a52DEcecc0BA3Fe1ABAfbED879b2587C6294',
+    l2ERC20Gateway: '0xbc8eb6727975959706060E6b74a03040B86f98fE',
+    l2GatewayRouter: '0x8d14FEbEc038fa84068B1c1EaCD4c1d53d5f6Bc0',
+    l2Multicall: '0x0d0a6361fF7dDcd3c1E94291eEc1eCC54102EdD9',
+    l2ProxyAdmin: '0x442a57C5DADD875B5186df68B709dB3F80899e8A',
+    l2Weth: '0x454489c3D071BE21802B9464F6F4B3F64a0ed6C2',
+    l2WethGateway: '0x1Df7DDa065608633d4Eb9ea74792663EF6ebD2bE'
   },
   nitroGenesisBlock: 0,
   nitroGenesisL1Block: 0,
@@ -647,7 +648,7 @@ export function getNetworkLogo(
     case ChainId.OwnTestnet:
       return '/images/XaiLogo.svg'
     case ChainId.DeriwTestnet:
-      return '/images/XaiLogo.svg'
+      return '/images/DeriwLogo.png'
     case ChainId.StylusTestnet:
       return '/images/StylusLogo.svg'
 

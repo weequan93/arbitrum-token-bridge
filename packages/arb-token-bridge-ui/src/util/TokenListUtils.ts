@@ -100,7 +100,7 @@ export const BRIDGE_TOKEN_LISTS: BridgeTokenList[] = [
     name: 'Arbed CMC List',
     isDefault: true,
     logoURI: CMCLogo
-  }
+  },
 ]
 
 export const listIdsToNames: { [key: string]: string } = {}

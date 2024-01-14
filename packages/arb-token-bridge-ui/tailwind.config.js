@@ -49,6 +49,8 @@ module.exports = {
         'xai-dark': '#87000E',
         'stylus-primary': '#E3066E',
         'stylus-dark': '#7E0028',
+        'deriw-primary': '#A729D6',
+        'deriw-dark': '#673CD8',
         'ocl-blue': '#243145'
       },
       fontFamily: {
