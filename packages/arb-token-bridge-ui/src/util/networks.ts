@@ -670,7 +670,7 @@ export function getNetworkLogo(
 export function getSupportedNetworks(chainId = 0, includeTestnets = false) {
   const testnetNetworks = [
     // ChainId.Goerli,
-    ChainId.ArbitrumGoerli,
+    // ChainId.ArbitrumGoerli,
     ChainId.Sepolia,
     ChainId.ArbitrumSepolia,
     // ChainId.XaiTestnet,
