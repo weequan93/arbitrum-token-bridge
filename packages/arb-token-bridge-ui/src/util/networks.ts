@@ -110,9 +110,9 @@ export function getL2ChainIds(l1ChainId: number): ChainId[] {
     case ChainId.Sepolia:
       return [
         ChainId.ArbitrumSepolia,
-        ChainId.StylusTestnet,
+        // ChainId.StylusTestnet,
         ChainId.DeriwTestnet,
-        ChainId.OwnTestnet,
+        // ChainId.OwnTestnet,
         ...getCustomChainIds(ChainId.ArbitrumSepolia)
       ]
     case ChainId.Local:
@@ -130,9 +130,9 @@ export function getL2ChainIds(l1ChainId: number): ChainId[] {
     case ChainId.ArbitrumSepolia:
       return [
         ChainId.Sepolia,
-        ChainId.StylusTestnet,
+        // ChainId.StylusTestnet,
         ChainId.DeriwTestnet,
-        ChainId.OwnTestnet,
+        // ChainId.OwnTestnet,
         ...getCustomChainIds(ChainId.ArbitrumSepolia)
       ]
     case ChainId.ArbitrumLocal:
@@ -670,14 +670,14 @@ export function getNetworkLogo(
 
 export function getSupportedNetworks(chainId = 0, includeTestnets = false) {
   const testnetNetworks = [
-    ChainId.Goerli,
+    // ChainId.Goerli,
     ChainId.ArbitrumGoerli,
     ChainId.Sepolia,
     ChainId.ArbitrumSepolia,
-    ChainId.XaiTestnet,
-    ChainId.OwnTestnet,
+    // ChainId.XaiTestnet,
+    // ChainId.OwnTestnet,
     ChainId.DeriwTestnet,
-    ChainId.StylusTestnet,
+    // ChainId.StylusTestnet,
     ...getCustomChainsFromLocalStorage().map(chain => chain.chainID)
   ]
 
@@ -688,8 +688,8 @@ export function getSupportedNetworks(chainId = 0, includeTestnets = false) {
   ]
 
   return isNetwork(chainId).isTestnet
-    ? [...mainnetNetworks, ...testnetNetworks]
-    : [...mainnetNetworks, ...(includeTestnets ? testnetNetworks : [])]
+    ? [...testnetNetworks]
+    : [...(includeTestnets ? testnetNetworks : [])]
 }
 
 export function mapCustomChainToNetworkData(chain: ChainWithRpcUrl) {
