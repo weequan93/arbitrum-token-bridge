@@ -160,7 +160,7 @@ export enum ChainId {
   XaiTestnet = 47279324479,
   StylusTestnet = 23011913,
   OwnTestnet = 60895392943,
-  DeriwTestnet = 59158539712
+  DeriwTestnet = 37987205000
 }
 
 export const supportedCustomOrbitParentChains = [
@@ -405,22 +405,26 @@ export const OwnTestnet: Chain = {
 }
 
 export const DeriwTestnet: Chain = {
-  chainID: 37987205000,
-  confirmPeriodBlocks: 150,
-  ethBridge: {
+  "chainID": 37987205000,
+  "confirmPeriodBlocks": 150,
+  "ethBridge": {
     "bridge": "0xaE9e0794dc438443A044E434B070e824261ce224",
     "inbox": "0x10548c707E8D4886dC6428B0b6a506100B347D2a",
     "outbox": "0x6F3880Cbf716b094D39B92a10ac32D6638f485df",
     "rollup": "0x116b82aD40835eFaF5D825c19A9513aBEA1a6147",
     "sequencerInbox": "0xEc3204Fe4CcDCD5ea5cEE1580b4B45B1d2F10D9b"
   },
-  explorerUrl: 'http://explorer.test2.deriw.com',
-  isArbitrum: true,
-  isCustom: true,
-  name: 'Deriw Testnet',
-  partnerChainID: 421614,
-  retryableLifetimeSeconds: 604800,
-  tokenBridge: {
+  "explorerUrl": "https://explorer.test2.deriw.com",
+  "isArbitrum": true,
+  "isCustom": true,
+  "name": "Deriw Testnet",
+  "partnerChainID": 421614,
+  "retryableLifetimeSeconds": 604800,
+  "nitroGenesisBlock": 0,
+  "nitroGenesisL1Block": 0,
+  "depositTimeout": 900000,
+  "nativeToken": "0x0bD3Ff848003983471f65A8c3a6fdd7C6bEE3F3E",
+  "tokenBridge": {
     "l1CustomGateway": "0x26b29b218E875cC5aEF0e34D4Bab53Fc9109200B",
     "l1ERC20Gateway": "0x9b00E13fA167AD4f8D39886Bc6BA73f1FB8A6b5E",
     "l1GatewayRouter": "0xa134c1441c46efE96839a2a5B06Df27d5C8e1FfF",
@@ -435,10 +439,7 @@ export const DeriwTestnet: Chain = {
     "l2ProxyAdmin": "0xD2EB790dCFc2Bb6CB96125C94e7b056a845AD0Bb",
     "l2Weth": "0x0000000000000000000000000000000000000000",
     "l2WethGateway": "0x0000000000000000000000000000000000000000"
-  },
-  nitroGenesisBlock: 0,
-  nitroGenesisL1Block: 0,
-  "depositTimeout": 900000,
+  }
 }
 
 
