@@ -194,7 +194,7 @@ export const rpcURLs: { [chainId: number]: string } = {
   [ChainId.StylusTestnet]: 'https://stylus-testnet.arbitrum.io/rpc',
 
   [ChainId.OwnTestnet]: 'http://localhost:8449',
-  [ChainId.DeriwTestnet]: 'https://rpc.test.deriw.com'
+  [ChainId.DeriwTestnet]: 'https://rpc.test2.deriw.com'
 }
 
 export const explorerUrls: { [chainId: number]: string } = {
@@ -214,7 +214,7 @@ export const explorerUrls: { [chainId: number]: string } = {
   [ChainId.StylusTestnet]: 'https://stylus-testnet-explorer.arbitrum.io',
 
   [ChainId.OwnTestnet]: 'http://localhost:4000',
-  [ChainId.DeriwTestnet]: 'http://explorer.test.deriw.com'
+  [ChainId.DeriwTestnet]: 'http://explorer.test2.deriw.com'
 }
 
 export const getExplorerUrl = (chainId: ChainId) => {
@@ -405,41 +405,40 @@ export const OwnTestnet: Chain = {
 }
 
 export const DeriwTestnet: Chain = {
-  chainID: 59158539712,
-  confirmPeriodBlocks: 20,
+  chainID: 37987205000,
+  confirmPeriodBlocks: 150,
   ethBridge: {
-    bridge: '0xFab361BB2CdA666586fC76921D49550cdE040e6b',
-    inbox: '0xD6F69262E361e8Dc2A37943f60b6b27523476272',
-    outbox: '0x4A0e2DD1649dbe8161CC86e6219E1905020FF0b3',
-    rollup: '0xeDdFF752C441dF127f112ab10cded499df14779f',
-    sequencerInbox: '0x84879a0d36bEcfc943B6Ec6Aeaa53bc9e261349d'
+    "bridge": "0xaE9e0794dc438443A044E434B070e824261ce224",
+    "inbox": "0x10548c707E8D4886dC6428B0b6a506100B347D2a",
+    "outbox": "0x6F3880Cbf716b094D39B92a10ac32D6638f485df",
+    "rollup": "0x116b82aD40835eFaF5D825c19A9513aBEA1a6147",
+    "sequencerInbox": "0xEc3204Fe4CcDCD5ea5cEE1580b4B45B1d2F10D9b"
   },
-  explorerUrl: 'http://explorer.test.deriw.com',
+  explorerUrl: 'http://explorer.test2.deriw.com',
   isArbitrum: true,
   isCustom: true,
   name: 'Deriw Testnet',
   partnerChainID: 421614,
   retryableLifetimeSeconds: 604800,
   tokenBridge: {
-    l1CustomGateway: '0xba2F7B6eAe1F9d174199C5E4867b563E0eaC40F3',
-    l1ERC20Gateway: '0x902b3E5f8F19571859F4AB1003B960a5dF693aFF',
-    l1GatewayRouter: '0xcE18836b233C83325Cc8848CA4487e94C6288264',
-    l1MultiCall: '0x21779e0950A87DDD57E341d54fc12Ab10F6eE167',
-    l1ProxyAdmin: '0xDBFC2FfB44A5D841aB42b0882711ed6e5A9244b0',
-    l1Weth: '0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9',
-    l1WethGateway: '0xA8aD8d7e13cbf556eE75CB0324c13535d8100e1E',
-
-    l2CustomGateway: '0x9Bf0a52DEcecc0BA3Fe1ABAfbED879b2587C6294',
-    l2ERC20Gateway: '0xbc8eb6727975959706060E6b74a03040B86f98fE',
-    l2GatewayRouter: '0x8d14FEbEc038fa84068B1c1EaCD4c1d53d5f6Bc0',
-    l2Multicall: '0x0d0a6361fF7dDcd3c1E94291eEc1eCC54102EdD9',
-    l2ProxyAdmin: '0x442a57C5DADD875B5186df68B709dB3F80899e8A',
-    l2Weth: '0x454489c3D071BE21802B9464F6F4B3F64a0ed6C2',
-    l2WethGateway: '0x1Df7DDa065608633d4Eb9ea74792663EF6ebD2bE'
+    "l1CustomGateway": "0x26b29b218E875cC5aEF0e34D4Bab53Fc9109200B",
+    "l1ERC20Gateway": "0x9b00E13fA167AD4f8D39886Bc6BA73f1FB8A6b5E",
+    "l1GatewayRouter": "0xa134c1441c46efE96839a2a5B06Df27d5C8e1FfF",
+    "l1MultiCall": "0xce1CAd780c529e66e3aa6D952a1ED9A6447791c1",
+    "l1ProxyAdmin": "0xC4147Ed9C643a04709EacBe91f0F6D000D55Ac19",
+    "l1Weth": "0x0000000000000000000000000000000000000000",
+    "l1WethGateway": "0x0000000000000000000000000000000000000000",
+    "l2CustomGateway": "0xC237Fe16BD641a8Fcad61289310D76CD5d172C93",
+    "l2ERC20Gateway": "0x5d04B8C77E13E96B4173ACF0489691e8f4b0ec91",
+    "l2GatewayRouter": "0x68e4BADa67937c0cEe1642Cdb54581E126961317",
+    "l2Multicall": "0x72Dd4B38b08E4ff4598605cc9A3dBB6a609327E8",
+    "l2ProxyAdmin": "0xD2EB790dCFc2Bb6CB96125C94e7b056a845AD0Bb",
+    "l2Weth": "0x0000000000000000000000000000000000000000",
+    "l2WethGateway": "0x0000000000000000000000000000000000000000"
   },
   nitroGenesisBlock: 0,
   nitroGenesisL1Block: 0,
-  depositTimeout: 1800000
+  "depositTimeout": 900000,
 }
 
 
