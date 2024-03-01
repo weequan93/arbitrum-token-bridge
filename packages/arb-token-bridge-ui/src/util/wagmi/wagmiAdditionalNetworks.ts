@@ -131,7 +131,7 @@ export const DeriwTestnet: Chain = {
   blockExplorers: {
     default: {
       name: 'Blockscout',
-      url: 'http://explorer.test2.deriw.com/'
+      url: 'http://explorer.test.deriw.com/'
     }
   }
 }

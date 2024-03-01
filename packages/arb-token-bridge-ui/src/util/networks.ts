@@ -194,7 +194,7 @@ export const rpcURLs: { [chainId: number]: string } = {
   [ChainId.StylusTestnet]: 'https://stylus-testnet.arbitrum.io/rpc',
 
   [ChainId.OwnTestnet]: 'http://localhost:8449',
-  [ChainId.DeriwTestnet]: 'https://rpc.test2.deriw.com'
+  [ChainId.DeriwTestnet]: 'https://rpc.test.deriw.com'
 }
 
 export const explorerUrls: { [chainId: number]: string } = {
@@ -214,7 +214,7 @@ export const explorerUrls: { [chainId: number]: string } = {
   [ChainId.StylusTestnet]: 'https://stylus-testnet-explorer.arbitrum.io',
 
   [ChainId.OwnTestnet]: 'http://localhost:4000',
-  [ChainId.DeriwTestnet]: 'http://explorer.test2.deriw.com'
+  [ChainId.DeriwTestnet]: 'http://explorer.test.deriw.com'
 }
 
 export const getExplorerUrl = (chainId: ChainId) => {
@@ -414,7 +414,7 @@ export const DeriwTestnet: Chain = {
     "rollup": "0x116b82aD40835eFaF5D825c19A9513aBEA1a6147",
     "sequencerInbox": "0xEc3204Fe4CcDCD5ea5cEE1580b4B45B1d2F10D9b"
   },
-  "explorerUrl": "https://explorer.test2.deriw.com",
+  "explorerUrl": "https://explorer.test.deriw.com",
   "isArbitrum": true,
   "isCustom": true,
   "name": "Deriw Testnet",
