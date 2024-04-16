@@ -159,7 +159,7 @@ export enum ChainId {
   // Orbit Testnets
   XaiTestnet = 47279324479,
   StylusTestnet = 23011913,
-  DeriwDevnet = 80707394653,
+  DeriwDevnet = 44474237230,
   DeriwTestnet = 2109095698
 }
 
@@ -367,14 +367,14 @@ export const xaiTestnet: Chain = {
 }
 
 export const DeriwDevnet: Chain = {
-  "chainID": 80707394653,
+  "chainID": 44474237230,
   "confirmPeriodBlocks": 50,
   "ethBridge": {
-    "bridge": "0x4D1ab7030B3194C99b05C404d8E0feC54cF71a94",
-    "inbox": "0x506Dc21F082cB0D5505394066f84ac482c08290e",
-    "outbox": "0xa97d32383772BB601E3A554d161Fa7489Fd94cEf",
-    "rollup": "0x4030E25DDA7de9422d2447d5a384060a4132a6f7",
-    "sequencerInbox": "0xABa1dd3991319AFE7E8ae785009BaFF8C27D9927"
+    "bridge": "0xEcd56399e94856c50C7F9a8b77077da1d6C8468A",
+    "inbox": "0x514db932b162B095e6556999c8B6a076bc8a5f4E",
+    "outbox": "0x9DA2D02189c45699Cd76f24608f6109fF3e002fd",
+    "rollup": "0xfF9819B1f4E4bDf5fA0f4368338215932F4151B5",
+    "sequencerInbox": "0x8d41c93A393Fa8cE1c1A85306bfB2C2193A27DF1"
   },
   "explorerUrl": "https://explorer.dev.deriw.com",
   "isCustom": true,
@@ -388,18 +388,18 @@ export const DeriwDevnet: Chain = {
   "nativeToken": "0x0bD3Ff848003983471f65A8c3a6fdd7C6bEE3F3E",
   "isArbitrum": true,
   "tokenBridge": {
-    "l1CustomGateway": "0x642D5C4Fcc950246eB6Fb3ECddE84ad7597e2B73",
-    "l1ERC20Gateway": "0x97e181Ef033B599850F2a8df4335158472EC92fF",
-    "l1GatewayRouter": "0x11FeBa5f9138Fda6408583Fa58856Cc1eBDB863d",
+    "l1CustomGateway": "0xc12ce65C061759962a959F33d9267510C81aD0D9",
+    "l1ERC20Gateway": "0xf062B6D18bFa6aAd345d71e8Ab8C6e1C65aA952f",
+    "l1GatewayRouter": "0x4daA1166Aa82b9A4f4D36A061d6c8781D0CA0cd7",
     "l1MultiCall": "0xce1CAd780c529e66e3aa6D952a1ED9A6447791c1",
     "l1ProxyAdmin": "0x0000000000000000000000000000000000000000",
     "l1Weth": "0x0000000000000000000000000000000000000000",
     "l1WethGateway": "0x0000000000000000000000000000000000000000",
-    "l2CustomGateway": "0xF89586bd79cC0969a5a106BD1e3AaD3e0b2EeD8F",
-    "l2ERC20Gateway": "0xe88c33ed4Bc7B246E73dD8f570c45f2C616C0129",
-    "l2GatewayRouter": "0xFEC01f98fb52ad97ff60c47ebace967D66D64123",
-    "l2Multicall": "0xfb68988b580445da2550F1CE9554474cf06540DF",
-    "l2ProxyAdmin": "0x7BBb146C00eE9Cc470aF319ee2E12e46f0DA09E6",
+    "l2CustomGateway": "0x4875D230223D9D1343d306509400444Aa9EF58fA",
+    "l2ERC20Gateway": "0x13F1Fbb27abe6Cb07F7223d4C719A0bbfEC4D306",
+    "l2GatewayRouter": "0x6238283ef7567E84BC7Aa3a847Db60e973a0036E",
+    "l2Multicall": "0x6b2Ef75BBb823dfAfD2a880883e0D11213Bb5E24",
+    "l2ProxyAdmin": "0x9FcF5E7D2B3e632cb081D6C19b9F8BDa005C6c9c",
     "l2Weth": "0x0000000000000000000000000000000000000000",
     "l2WethGateway": "0x0000000000000000000000000000000000000000"
   }
