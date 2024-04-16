@@ -112,7 +112,7 @@ export function getL2ChainIds(l1ChainId: number): ChainId[] {
         ChainId.ArbitrumSepolia,
         // ChainId.StylusTestnet,
         ChainId.DeriwTestnet,
-        // ChainId.OwnTestnet,
+        // ChainId.DeriwDevnet,
         ...getCustomChainIds(ChainId.ArbitrumSepolia)
       ]
     case ChainId.Local:
@@ -132,7 +132,7 @@ export function getL2ChainIds(l1ChainId: number): ChainId[] {
         ChainId.Sepolia,
         // ChainId.StylusTestnet,
         ChainId.DeriwTestnet,
-        // ChainId.OwnTestnet,
+        // ChainId.DeriwDevnet,
         ...getCustomChainIds(ChainId.ArbitrumSepolia)
       ]
     case ChainId.ArbitrumLocal:
@@ -159,7 +159,7 @@ export enum ChainId {
   // Orbit Testnets
   XaiTestnet = 47279324479,
   StylusTestnet = 23011913,
-  OwnTestnet = 60895392943,
+  DeriwDevnet = 80707394653,
   DeriwTestnet = 2109095698
 }
 
@@ -193,8 +193,8 @@ export const rpcURLs: { [chainId: number]: string } = {
   [ChainId.XaiTestnet]: 'https://testnet.xai-chain.net/rpc',
   [ChainId.StylusTestnet]: 'https://stylus-testnet.arbitrum.io/rpc',
 
-  [ChainId.OwnTestnet]: 'http://localhost:8449',
-  [ChainId.DeriwTestnet]: 'https://rpc.dev.deriw.com'
+  [ChainId.DeriwDevnet]: 'https://rpc.dev.deriw.com',
+  [ChainId.DeriwTestnet]: 'https://rpc.test.deriw.com'
 }
 
 export const explorerUrls: { [chainId: number]: string } = {
@@ -213,8 +213,8 @@ export const explorerUrls: { [chainId: number]: string } = {
   [ChainId.XaiTestnet]: 'https://testnet-explorer.xai-chain.net',
   [ChainId.StylusTestnet]: 'https://stylus-testnet-explorer.arbitrum.io',
 
-  [ChainId.OwnTestnet]: 'http://localhost:4000',
-  [ChainId.DeriwTestnet]: 'http://explorer.dev.deriw.com'
+  [ChainId.DeriwDevnet]: 'https://explorer.dev.deriw.com',
+  [ChainId.DeriwTestnet]: 'https://explorer.test.deriw.com'
 }
 
 export const getExplorerUrl = (chainId: ChainId) => {
@@ -271,11 +271,11 @@ export const chainIdToDefaultL2ChainId: { [chainId: number]: ChainId[] } = {
   [ChainId.ArbitrumNova]: [ChainId.ArbitrumNova],
   // L2 Testnets
   [ChainId.ArbitrumGoerli]: [ChainId.ArbitrumGoerli, ChainId.XaiTestnet],
-  [ChainId.ArbitrumSepolia]: [ChainId.ArbitrumSepolia, ChainId.StylusTestnet, ChainId.DeriwTestnet, ChainId.OwnTestnet],
+  [ChainId.ArbitrumSepolia]: [ChainId.ArbitrumSepolia, ChainId.StylusTestnet, ChainId.DeriwTestnet, ChainId.DeriwDevnet],
   // Orbit Testnets
   [ChainId.XaiTestnet]: [ChainId.XaiTestnet],
   [ChainId.StylusTestnet]: [ChainId.StylusTestnet],
-  [ChainId.OwnTestnet]: [ChainId.OwnTestnet],
+  [ChainId.DeriwDevnet]: [ChainId.DeriwDevnet],
   [ChainId.DeriwTestnet]: [ChainId.DeriwTestnet]
 }
 
@@ -366,20 +366,21 @@ export const xaiTestnet: Chain = {
   depositTimeout: 1800000
 }
 
-export const OwnTestnet: Chain = {
-  "chainID": 60895392943,
-  "confirmPeriodBlocks": 150,
+export const DeriwDevnet: Chain = {
+  "chainID": 80707394653,
+  "confirmPeriodBlocks": 50,
   "ethBridge": {
-    "bridge": "0x785F6cFeB49D4C1775C4646fDF3B237FfB436247",
-    "inbox": "0x47B1086DEfDbcAe8DC8522Fb07FFcd37BC5Cb634",
-    "outbox": "0x6F541d2095E6f5fDdDF8c2D76998e59e6C4e408c",
-    "rollup": "0x8EAe423D107528Ad2CE80a5902cF2231af69D32A",
-    "sequencerInbox": "0xBe3dE85df60a62bb7692464AEEE51f2104377B73"
+    "bridge": "0x4D1ab7030B3194C99b05C404d8E0feC54cF71a94",
+    "inbox": "0x506Dc21F082cB0D5505394066f84ac482c08290e",
+    "outbox": "0xa97d32383772BB601E3A554d161Fa7489Fd94cEf",
+    "rollup": "0x4030E25DDA7de9422d2447d5a384060a4132a6f7",
+    "sequencerInbox": "0xABa1dd3991319AFE7E8ae785009BaFF8C27D9927"
   },
-  "explorerUrl": "http://localhost:4000",
+  "explorerUrl": "https://explorer.dev.deriw.com",
   "isCustom": true,
-  "name": "My Arbitrum L3 Chain",
+  "name": "OrbitChain",
   "partnerChainID": 421614,
+  "partnerChainIDs": [],
   "retryableLifetimeSeconds": 604800,
   "nitroGenesisBlock": 0,
   "nitroGenesisL1Block": 0,
@@ -387,18 +388,18 @@ export const OwnTestnet: Chain = {
   "nativeToken": "0x0bD3Ff848003983471f65A8c3a6fdd7C6bEE3F3E",
   "isArbitrum": true,
   "tokenBridge": {
-    "l1CustomGateway": "0xd0cC43e7B405800CdD873031F61fC6e53b2c040f",
-    "l1ERC20Gateway": "0x97Fa2BFf3b365CFfe0d8E0d22544e18406a70182",
-    "l1GatewayRouter": "0xB78400e10F508aC6fc6ff57F2aC8dBB4Ad79Cc6c",
+    "l1CustomGateway": "0x642D5C4Fcc950246eB6Fb3ECddE84ad7597e2B73",
+    "l1ERC20Gateway": "0x97e181Ef033B599850F2a8df4335158472EC92fF",
+    "l1GatewayRouter": "0x11FeBa5f9138Fda6408583Fa58856Cc1eBDB863d",
     "l1MultiCall": "0xce1CAd780c529e66e3aa6D952a1ED9A6447791c1",
-    "l1ProxyAdmin": "0xEC81142e16D36b2b080D6BdE4a91573e6800E2B1",
+    "l1ProxyAdmin": "0x0000000000000000000000000000000000000000",
     "l1Weth": "0x0000000000000000000000000000000000000000",
     "l1WethGateway": "0x0000000000000000000000000000000000000000",
-    "l2CustomGateway": "0xF1FdcfBe4f1574D73b26CD677f4EEc7030472A6e",
-    "l2ERC20Gateway": "0xa06D33EF985652f663E8f2E5474BE8e527DD3253",
-    "l2GatewayRouter": "0x2a837e160775FB6ae9e11E01518a2646d1ecA19f",
-    "l2Multicall": "0x94e42E5306285A088De522531345d414648D16A6",
-    "l2ProxyAdmin": "0x461E41E6F0394a55c2Cc8ECc84C225F98b55C30A",
+    "l2CustomGateway": "0xF89586bd79cC0969a5a106BD1e3AaD3e0b2EeD8F",
+    "l2ERC20Gateway": "0xe88c33ed4Bc7B246E73dD8f570c45f2C616C0129",
+    "l2GatewayRouter": "0xFEC01f98fb52ad97ff60c47ebace967D66D64123",
+    "l2Multicall": "0xfb68988b580445da2550F1CE9554474cf06540DF",
+    "l2ProxyAdmin": "0x7BBb146C00eE9Cc470aF319ee2E12e46f0DA09E6",
     "l2Weth": "0x0000000000000000000000000000000000000000",
     "l2WethGateway": "0x0000000000000000000000000000000000000000"
   }
@@ -504,7 +505,7 @@ export function isNetwork(chainId: ChainId) {
   const isXaiTestnet = chainId === ChainId.XaiTestnet
   const isStylusTestnet = chainId === ChainId.StylusTestnet
 
-  const isOwnTestnet = chainId === ChainId.OwnTestnet
+  const isOwnTestnet = chainId === ChainId.DeriwDevnet
 
   const isDeriwTestnet = chainId === ChainId.DeriwTestnet
 
@@ -610,8 +611,8 @@ export function getNetworkName(chainId: number) {
 
     case ChainId.XaiTestnet:
       return 'Xai Testnet'
-    case ChainId.OwnTestnet:
-      return 'Own Testnet'
+    case ChainId.DeriwDevnet:
+      return 'Deriw Devnet'
     case ChainId.DeriwTestnet:
       return 'Deriw Testnet'
 
@@ -648,8 +649,8 @@ export function getNetworkLogo(
 
     case ChainId.XaiTestnet:
       return '/images/XaiLogo.svg'
-    case ChainId.OwnTestnet:
-      return '/images/XaiLogo.svg'
+    case ChainId.DeriwDevnet:
+      return '/images/DeriwLogo.png'
     case ChainId.DeriwTestnet:
       return '/images/DeriwLogo.png'
     case ChainId.StylusTestnet:
@@ -676,7 +677,7 @@ export function getSupportedNetworks(chainId = 0, includeTestnets = false) {
     ChainId.Sepolia,
     ChainId.ArbitrumSepolia,
     // ChainId.XaiTestnet,
-    // ChainId.OwnTestnet,
+    // ChainId.DeriwDevnet,
     ChainId.DeriwTestnet,
     // ChainId.StylusTestnet,
     ...getCustomChainsFromLocalStorage().map(chain => chain.chainID)

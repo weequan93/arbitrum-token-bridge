@@ -94,23 +94,23 @@ export const xaiTestnet: Chain = {
   }
 }
 
-export const OwnTestnet: Chain = {
-  id: ChainId.OwnTestnet,
-  name: 'Own Testnet',
-  network: 'own-testnet',
+export const DeriwDevnet: Chain = {
+  id: ChainId.DeriwDevnet,
+  name: 'Deriw Testnet',
+  network: 'deriw-testnet',
   nativeCurrency: ether,
   rpcUrls: {
     default: {
-      http: [rpcURLs[ChainId.OwnTestnet]!]
+      http: [rpcURLs[ChainId.DeriwDevnet]!]
     },
     public: {
-      http: [rpcURLs[ChainId.OwnTestnet]!]
+      http: [rpcURLs[ChainId.DeriwDevnet]!]
     }
   },
   blockExplorers: {
     default: {
       name: 'Blockscout',
-      url: 'http://47.236.78.207:3050'
+      url: 'http://explorer.dev.deriw.com'
     }
   }
 }
@@ -131,7 +131,7 @@ export const DeriwTestnet: Chain = {
   blockExplorers: {
     default: {
       name: 'Blockscout',
-      url: 'http://explorer.dev.deriw.com/'
+      url: 'http://explorer.test.deriw.com/'
     }
   }
 }

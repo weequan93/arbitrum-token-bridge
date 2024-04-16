@@ -13,7 +13,7 @@ import {
   localL1Network as local,
   localL2Network as arbitrumLocal,
   chainToWagmiChain,
-  OwnTestnet,
+  DeriwDevnet,
   DeriwTestnet
 } from './wagmiAdditionalNetworks'
 import { isTestingEnvironment } from '../CommonUtils'
@@ -39,7 +39,7 @@ const chainList = isTestingEnvironment
       // Orbit chains
       xaiTestnet,
       stylusTestnet,
-      OwnTestnet,
+      DeriwDevnet,
       DeriwTestnet,
       // add local environments during testing
       local,
@@ -56,7 +56,7 @@ const chainList = isTestingEnvironment
       sepolia,
       arbitrumSepolia,
       xaiTestnet,
-      OwnTestnet,
+      DeriwDevnet,
       DeriwTestnet,
       stylusTestnet,
       ...customChains
