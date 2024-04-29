@@ -112,7 +112,7 @@ export function getL2ChainIds(l1ChainId: number): ChainId[] {
         ChainId.ArbitrumSepolia,
         // ChainId.StylusTestnet,
         ChainId.DeriwTestnet,
-        // ChainId.OwnTestnet,
+        // ChainId.DeriwDevnet,
         ...getCustomChainIds(ChainId.ArbitrumSepolia)
       ]
     case ChainId.Local:
@@ -132,7 +132,7 @@ export function getL2ChainIds(l1ChainId: number): ChainId[] {
         ChainId.Sepolia,
         // ChainId.StylusTestnet,
         ChainId.DeriwTestnet,
-        // ChainId.OwnTestnet,
+        // ChainId.DeriwDevnet,
         ...getCustomChainIds(ChainId.ArbitrumSepolia)
       ]
     case ChainId.ArbitrumLocal:
@@ -159,8 +159,8 @@ export enum ChainId {
   // Orbit Testnets
   XaiTestnet = 47279324479,
   StylusTestnet = 23011913,
-  OwnTestnet = 60895392943,
-  DeriwTestnet = 37987205000
+  DeriwDevnet = 44474237230,
+  DeriwTestnet = 2109095698
 }
 
 export const supportedCustomOrbitParentChains = [
@@ -193,7 +193,7 @@ export const rpcURLs: { [chainId: number]: string } = {
   [ChainId.XaiTestnet]: 'https://testnet.xai-chain.net/rpc',
   [ChainId.StylusTestnet]: 'https://stylus-testnet.arbitrum.io/rpc',
 
-  [ChainId.OwnTestnet]: 'http://localhost:8449',
+  [ChainId.DeriwDevnet]: 'https://rpc.dev.deriw.com',
   [ChainId.DeriwTestnet]: 'https://rpc.test.deriw.com'
 }
 
@@ -213,8 +213,8 @@ export const explorerUrls: { [chainId: number]: string } = {
   [ChainId.XaiTestnet]: 'https://testnet-explorer.xai-chain.net',
   [ChainId.StylusTestnet]: 'https://stylus-testnet-explorer.arbitrum.io',
 
-  [ChainId.OwnTestnet]: 'http://localhost:4000',
-  [ChainId.DeriwTestnet]: 'http://explorer.test.deriw.com'
+  [ChainId.DeriwDevnet]: 'https://explorer.dev.deriw.com',
+  [ChainId.DeriwTestnet]: 'https://explorer.test.deriw.com'
 }
 
 export const getExplorerUrl = (chainId: ChainId) => {
@@ -271,11 +271,11 @@ export const chainIdToDefaultL2ChainId: { [chainId: number]: ChainId[] } = {
   [ChainId.ArbitrumNova]: [ChainId.ArbitrumNova],
   // L2 Testnets
   [ChainId.ArbitrumGoerli]: [ChainId.ArbitrumGoerli, ChainId.XaiTestnet],
-  [ChainId.ArbitrumSepolia]: [ChainId.ArbitrumSepolia, ChainId.StylusTestnet, ChainId.DeriwTestnet, ChainId.OwnTestnet],
+  [ChainId.ArbitrumSepolia]: [ChainId.ArbitrumSepolia, ChainId.StylusTestnet, ChainId.DeriwTestnet, ChainId.DeriwDevnet],
   // Orbit Testnets
   [ChainId.XaiTestnet]: [ChainId.XaiTestnet],
   [ChainId.StylusTestnet]: [ChainId.StylusTestnet],
-  [ChainId.OwnTestnet]: [ChainId.OwnTestnet],
+  [ChainId.DeriwDevnet]: [ChainId.DeriwDevnet],
   [ChainId.DeriwTestnet]: [ChainId.DeriwTestnet]
 }
 
@@ -366,20 +366,21 @@ export const xaiTestnet: Chain = {
   depositTimeout: 1800000
 }
 
-export const OwnTestnet: Chain = {
-  "chainID": 60895392943,
-  "confirmPeriodBlocks": 150,
+export const DeriwDevnet: Chain = {
+  "chainID": 44474237230,
+  "confirmPeriodBlocks": 50,
   "ethBridge": {
-    "bridge": "0x785F6cFeB49D4C1775C4646fDF3B237FfB436247",
-    "inbox": "0x47B1086DEfDbcAe8DC8522Fb07FFcd37BC5Cb634",
-    "outbox": "0x6F541d2095E6f5fDdDF8c2D76998e59e6C4e408c",
-    "rollup": "0x8EAe423D107528Ad2CE80a5902cF2231af69D32A",
-    "sequencerInbox": "0xBe3dE85df60a62bb7692464AEEE51f2104377B73"
+    "bridge": "0xEcd56399e94856c50C7F9a8b77077da1d6C8468A",
+    "inbox": "0x514db932b162B095e6556999c8B6a076bc8a5f4E",
+    "outbox": "0x9DA2D02189c45699Cd76f24608f6109fF3e002fd",
+    "rollup": "0xfF9819B1f4E4bDf5fA0f4368338215932F4151B5",
+    "sequencerInbox": "0x8d41c93A393Fa8cE1c1A85306bfB2C2193A27DF1"
   },
-  "explorerUrl": "http://localhost:4000",
+  "explorerUrl": "https://explorer.dev.deriw.com",
   "isCustom": true,
-  "name": "My Arbitrum L3 Chain",
+  "name": "OrbitChain",
   "partnerChainID": 421614,
+  "partnerChainIDs": [],
   "retryableLifetimeSeconds": 604800,
   "nitroGenesisBlock": 0,
   "nitroGenesisL1Block": 0,
@@ -387,56 +388,57 @@ export const OwnTestnet: Chain = {
   "nativeToken": "0x0bD3Ff848003983471f65A8c3a6fdd7C6bEE3F3E",
   "isArbitrum": true,
   "tokenBridge": {
-    "l1CustomGateway": "0xd0cC43e7B405800CdD873031F61fC6e53b2c040f",
-    "l1ERC20Gateway": "0x97Fa2BFf3b365CFfe0d8E0d22544e18406a70182",
-    "l1GatewayRouter": "0xB78400e10F508aC6fc6ff57F2aC8dBB4Ad79Cc6c",
+    "l1CustomGateway": "0xc12ce65C061759962a959F33d9267510C81aD0D9",
+    "l1ERC20Gateway": "0xf062B6D18bFa6aAd345d71e8Ab8C6e1C65aA952f",
+    "l1GatewayRouter": "0x4daA1166Aa82b9A4f4D36A061d6c8781D0CA0cd7",
     "l1MultiCall": "0xce1CAd780c529e66e3aa6D952a1ED9A6447791c1",
-    "l1ProxyAdmin": "0xEC81142e16D36b2b080D6BdE4a91573e6800E2B1",
+    "l1ProxyAdmin": "0x0000000000000000000000000000000000000000",
     "l1Weth": "0x0000000000000000000000000000000000000000",
     "l1WethGateway": "0x0000000000000000000000000000000000000000",
-    "l2CustomGateway": "0xF1FdcfBe4f1574D73b26CD677f4EEc7030472A6e",
-    "l2ERC20Gateway": "0xa06D33EF985652f663E8f2E5474BE8e527DD3253",
-    "l2GatewayRouter": "0x2a837e160775FB6ae9e11E01518a2646d1ecA19f",
-    "l2Multicall": "0x94e42E5306285A088De522531345d414648D16A6",
-    "l2ProxyAdmin": "0x461E41E6F0394a55c2Cc8ECc84C225F98b55C30A",
+    "l2CustomGateway": "0x4875D230223D9D1343d306509400444Aa9EF58fA",
+    "l2ERC20Gateway": "0x13F1Fbb27abe6Cb07F7223d4C719A0bbfEC4D306",
+    "l2GatewayRouter": "0x6238283ef7567E84BC7Aa3a847Db60e973a0036E",
+    "l2Multicall": "0x6b2Ef75BBb823dfAfD2a880883e0D11213Bb5E24",
+    "l2ProxyAdmin": "0x9FcF5E7D2B3e632cb081D6C19b9F8BDa005C6c9c",
     "l2Weth": "0x0000000000000000000000000000000000000000",
     "l2WethGateway": "0x0000000000000000000000000000000000000000"
   }
 }
 
 export const DeriwTestnet: Chain = {
-  "chainID": 37987205000,
-  "confirmPeriodBlocks": 150,
+  "chainID": 90483539238,
+  "confirmPeriodBlocks": 30,
   "ethBridge": {
-    "bridge": "0xaE9e0794dc438443A044E434B070e824261ce224",
-    "inbox": "0x10548c707E8D4886dC6428B0b6a506100B347D2a",
-    "outbox": "0x6F3880Cbf716b094D39B92a10ac32D6638f485df",
-    "rollup": "0x116b82aD40835eFaF5D825c19A9513aBEA1a6147",
-    "sequencerInbox": "0xEc3204Fe4CcDCD5ea5cEE1580b4B45B1d2F10D9b"
+    "bridge": "0xb4f5f2fBaD1a4B1663C1100a36a08517C20aFFa3",
+    "inbox": "0x076c69959B79edce9d6cE4aC9B7ED5231839BF95",
+    "outbox": "0x28BbbAd322DB11432A672501730440676ae6E76e",
+    "rollup": "0xD56B456dD2FbA99071E85472F3b0075847AD2049",
+    "sequencerInbox": "0x1933a48cC5aff82D82fdCff18ccc13498d08F0B0"
   },
   "explorerUrl": "https://explorer.test.deriw.com",
   "isArbitrum": true,
   "isCustom": true,
   "name": "Deriw Testnet",
   "partnerChainID": 421614,
+  "partnerChainIDs": [],
   "retryableLifetimeSeconds": 604800,
   "nitroGenesisBlock": 0,
   "nitroGenesisL1Block": 0,
   "depositTimeout": 900000,
   "nativeToken": "0x0bD3Ff848003983471f65A8c3a6fdd7C6bEE3F3E",
   "tokenBridge": {
-    "l1CustomGateway": "0x26b29b218E875cC5aEF0e34D4Bab53Fc9109200B",
-    "l1ERC20Gateway": "0x9b00E13fA167AD4f8D39886Bc6BA73f1FB8A6b5E",
-    "l1GatewayRouter": "0xa134c1441c46efE96839a2a5B06Df27d5C8e1FfF",
+    "l1CustomGateway": "0xd5Fdc51acB81634B31A1A1787DCDCc7CA5d88468",
+    "l1ERC20Gateway": "0x0CAb0842E244Fe151d9900f4b82192eEDfFB2DC4",
+    "l1GatewayRouter": "0x4d38baBe3B5518A9ceD9569AE8e72b12fb491949",
     "l1MultiCall": "0xce1CAd780c529e66e3aa6D952a1ED9A6447791c1",
-    "l1ProxyAdmin": "0xC4147Ed9C643a04709EacBe91f0F6D000D55Ac19",
+    "l1ProxyAdmin": "0x0000000000000000000000000000000000000000",
     "l1Weth": "0x0000000000000000000000000000000000000000",
     "l1WethGateway": "0x0000000000000000000000000000000000000000",
-    "l2CustomGateway": "0xC237Fe16BD641a8Fcad61289310D76CD5d172C93",
-    "l2ERC20Gateway": "0x5d04B8C77E13E96B4173ACF0489691e8f4b0ec91",
-    "l2GatewayRouter": "0x68e4BADa67937c0cEe1642Cdb54581E126961317",
-    "l2Multicall": "0x72Dd4B38b08E4ff4598605cc9A3dBB6a609327E8",
-    "l2ProxyAdmin": "0xD2EB790dCFc2Bb6CB96125C94e7b056a845AD0Bb",
+    "l2CustomGateway": "0xC4eb0Cd228F2509738c5d70753122f1B8fc88349",
+    "l2ERC20Gateway": "0xe5b05142350ED71820bFf8fb871b55D158044594",
+    "l2GatewayRouter": "0x121cD9c42A75D6a42b0D185a3290bE9F31ec337f",
+    "l2Multicall": "0x854d07989C362c32b643867082cdE4f111819Bf9",
+    "l2ProxyAdmin": "0x29B8FcF85D8F4AbCCE7c9404E40F8171f45d4c6e",
     "l2Weth": "0x0000000000000000000000000000000000000000",
     "l2WethGateway": "0x0000000000000000000000000000000000000000"
   }
@@ -503,7 +505,7 @@ export function isNetwork(chainId: ChainId) {
   const isXaiTestnet = chainId === ChainId.XaiTestnet
   const isStylusTestnet = chainId === ChainId.StylusTestnet
 
-  const isOwnTestnet = chainId === ChainId.OwnTestnet
+  const isOwnTestnet = chainId === ChainId.DeriwDevnet
 
   const isDeriwTestnet = chainId === ChainId.DeriwTestnet
 
@@ -609,8 +611,8 @@ export function getNetworkName(chainId: number) {
 
     case ChainId.XaiTestnet:
       return 'Xai Testnet'
-    case ChainId.OwnTestnet:
-      return 'Own Testnet'
+    case ChainId.DeriwDevnet:
+      return 'Deriw Devnet'
     case ChainId.DeriwTestnet:
       return 'Deriw Testnet'
 
@@ -647,8 +649,8 @@ export function getNetworkLogo(
 
     case ChainId.XaiTestnet:
       return '/images/XaiLogo.svg'
-    case ChainId.OwnTestnet:
-      return '/images/XaiLogo.svg'
+    case ChainId.DeriwDevnet:
+      return '/images/DeriwLogo.png'
     case ChainId.DeriwTestnet:
       return '/images/DeriwLogo.png'
     case ChainId.StylusTestnet:
@@ -675,7 +677,7 @@ export function getSupportedNetworks(chainId = 0, includeTestnets = false) {
     ChainId.Sepolia,
     ChainId.ArbitrumSepolia,
     // ChainId.XaiTestnet,
-    // ChainId.OwnTestnet,
+    // ChainId.DeriwDevnet,
     ChainId.DeriwTestnet,
     // ChainId.StylusTestnet,
     ...getCustomChainsFromLocalStorage().map(chain => chain.chainID)

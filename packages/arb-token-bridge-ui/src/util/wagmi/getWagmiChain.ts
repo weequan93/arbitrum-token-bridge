@@ -10,7 +10,7 @@ import {
   stylusTestnet,
   localL1Network,
   localL2Network,
-  OwnTestnet,
+  DeriwDevnet,
   DeriwTestnet,
 } from './wagmiAdditionalNetworks'
 import { ChainId } from '../networks'
@@ -58,8 +58,8 @@ export function getWagmiChain(chainId: number): Chain {
 
     case ChainId.ArbitrumLocal:
       return localL2Network
-    case ChainId.OwnTestnet:
-      return OwnTestnet
+    case ChainId.DeriwDevnet:
+      return DeriwDevnet
     
     case ChainId.DeriwTestnet:
       return DeriwTestnet
