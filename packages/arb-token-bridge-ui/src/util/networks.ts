@@ -160,7 +160,7 @@ export enum ChainId {
   XaiTestnet = 47279324479,
   StylusTestnet = 23011913,
   DeriwDevnet = 44474237230,
-  DeriwTestnet = 2109095698
+  DeriwTestnet = 90483539238
 }
 
 export const supportedCustomOrbitParentChains = [
