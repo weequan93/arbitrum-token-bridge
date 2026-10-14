@@ -1,0 +1,29 @@
+{
+  "purpose": "Approved source-only backup before recoverable local cleanup; not a deployment or build acceptance.",
+  "approved_base": "97e46bdd17b4cc58eb612c13adc8f6d7ed8706c1",
+  "source_versions": [
+    {
+      "original_path": "packages/arb-token-bridge-ui/src/util/TokenListUtils.ts",
+      "backup_path": "git-backup/stash-snapshots/approved-20261014/packages/arb-token-bridge-ui/src/util/TokenListUtils.ts",
+      "blob": "ccabbf2e87cfc569cf2aca12dfffad45d20e5f9c"
+    },
+    {
+      "original_path": "packages/arb-token-bridge-ui/src/util/networks.ts",
+      "backup_path": "git-backup/stash-snapshots/approved-20261014/packages/arb-token-bridge-ui/src/util/networks.ts",
+      "blob": "bf50191b84110c974f2300b1fadcd769ae6f7df4"
+    }
+  ],
+  "existing_workflows_archived_without_execution": [
+    {
+      "original": ".github/workflows/build-test.yml",
+      "archive": "git-backup/workflow-archives/build-test.yml",
+      "blob": "9ba91fa8fa0ef8479fd73a0f5e0c9f63938fea2b"
+    },
+    {
+      "original": ".github/workflows/pr-title-check.yml",
+      "archive": "git-backup/workflow-archives/pr-title-check.yml",
+      "blob": "27f06fd13d9cabaac78aad548a11d79aa4dd4359"
+    }
+  ],
+  "excluded": "No changed environment, credential, runtime, customer data, wallet or original raw stash payload is included. Original working files and branches are preserved."
+}
